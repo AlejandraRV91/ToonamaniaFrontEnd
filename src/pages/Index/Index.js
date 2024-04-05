@@ -16,7 +16,7 @@ export default function Index() {
     
 	return (
 		<div className="index">
-            {(!loading && characters.length > 0) ? (
+            {(!loading && characters && characters.length > 0) ? (
                 characters.map((character) => (
                     <Card key={character.id} character={character} />
                 ))
