@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound/NotFound";
 import Home from "./pages/Home/Home";
 import Index from "./pages/Index/Index";
-import Create from "./pages/Create/Create";
+import Create from "./pages/Create/CreateNewCharacter";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 

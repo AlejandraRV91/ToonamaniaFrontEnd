@@ -3,9 +3,9 @@ import { createCharacter } from "../../api/Crud";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-export default function Create() {
+ function Create() {
     const navigate = useNavigate();
-	function submitHandler(event) {
+	function HandleSubmit(event) {
 		event.preventDefault();
         const name = event.target.name.value;
         const age = event.target.age.value;
@@ -20,7 +20,7 @@ export default function Create() {
 		<div className="create-wrapper">
 			<div className="create">
 				<h1>Create Character</h1>
-				<form onSubmit={submitHandler}>
+				<form onSubmit={HandleSubmit}>
 					<div className="form-group">
 						<label htmlFor="name">Name:</label>
 						<input type="text" id="name" name="name" required />
@@ -49,3 +49,4 @@ export default function Create() {
 		</div>
 	);
 }
+export default Create
