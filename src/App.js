@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Index from "./components/Index";
-import Create from "./components/Create";
+import Create from "./components/CreateNewCharacter";
 
 function App() {
 	return (
