@@ -19,8 +19,8 @@
     height: 100%;
     border-radius: 30px;
     animation: moving 1s ease-in-out infinite;
-    ;
-  }
+    -webkit-animation: moving 1s ease-in-out infinite;
+}
   
   @keyframes moving {
     50% {

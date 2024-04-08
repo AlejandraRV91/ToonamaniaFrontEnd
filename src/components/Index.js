@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
-import { getAllCharacters } from "../../api/Crud";
 import "./Index.css";
-import Card from "../../components/Card/Card";
-import Loader from "../../components/Loader/Loader";
+import axios from "axios";
+import Card from "./Card";
+import Loader from "./Loader";
 
 export default function Index() {
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(true);
 	useEffect(() => {
-		getAllCharacters("/characters").then((data) => {
-			setCharacters(data);
-            setLoading(false);
-		});
+        
+		const data = axios.get(
+			process.env.REACT_APP_API_URL + "/characters",
+		);
+
+        data.then((data) => {
+            if (data.status === 200) {
+                setCharacters(data.data);
+                setLoading(false);
+            }
+        })
 	}, []);
     
 	return (

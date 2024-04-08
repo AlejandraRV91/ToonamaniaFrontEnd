@@ -1,11 +1,6 @@
-@font-face {
-    font-family: Modulus;
-    src: url(../../assets/fonts/Modulus_Medium.ttf);
-}
 
 .card {
     margin: 20px;
-    font-family: Modulus, sans-serif;
     position: relative;
     background-color: #ffffff;
     width: 400px;

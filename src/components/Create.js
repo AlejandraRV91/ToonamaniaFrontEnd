@@ -1,7 +1,6 @@
 import "./Create.css";
-import { createCharacter } from "../../api/Crud";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Create() {
     const navigate = useNavigate();
@@ -11,9 +10,15 @@ export default function Create() {
         const age = event.target.age.value;
         const image = event.target.image.value;
         const description = event.target.description.value;
-        createCharacter("/characters/new", { name, age, image, description }).then((data) => {
-            toast.success("Character created successfully");
-            navigate("/index");
+		
+		const response = axios.post(
+			process.env.REACT_APP_API_URL + "/characters/new",
+			{ name, age, image, description }
+		);
+        response.then((data) => {
+            if (data.status === 201) {
+				navigate("/index");
+            }
         })
 	}
 	return (
